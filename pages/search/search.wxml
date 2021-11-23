@@ -1,0 +1,39 @@
+<view>
+
+<!-- 搜索栏 -->
+<view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+                <view class="weui-search-bar__box">
+                  <view class="search-icon">
+                      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                  </view>
+                    <input type="text" class="weui-search-bar__input" bindfocus="focustap" bindblur="outfocustap" placeholder="请输入驿站名称" bindinput="keyInput"/>
+                </view>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="weui-search-bar__cancel-btn" bindtap='searchtap'>搜索</view>
+        </view>
+</view>
+
+<view wx:if="{{isfocus}}">
+    <block wx:for="{{parks}}" wx:for-item="p" wx:key="index" >
+        <view class='item' bindtap="move2Location" data-park="{{p}}">
+            <view class="title">{{p.name}}</view>
+            <view class="detail2"><text>></text></view>  
+        </view>
+        <view class="line"></view>
+    </block>
+</view>
+
+<view wx:if="{{mkrs.length>0}}">
+    <block wx:for="{{mkrs}}" wx:for-item="m" wx:key="index" >
+        <view class='item' bindtap="move2Location" data-park="{{m}}">
+            <view class="title">{{m.title}}</view>
+            <view class="detail2"><text>></text></view>  
+        </view>
+        <view class="line"></view>
+    </block>
+</view>
+</view>

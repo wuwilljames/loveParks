@@ -1,0 +1,248 @@
+.bar{
+  width: 100%;
+  height: 130rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo{
+  width: 200rpx;
+  height: 80rpx;
+}
+
+.page{
+  background-color: 	#DCDCDC;
+}
+
+/*搜索框*/
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EFEFF4;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: #09BB07;
+  white-space: nowrap;
+}
+
+.map{
+  width: 100%;border-radius: 20px;margin: 10rpx 0rpx 0rpx 0rpx;
+}
+.map-location{
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 50rpx;
+  right: 55rpx;
+  border-radius: 10rpx;
+  align-items: center;
+  background-color: white;
+}
+.map-icon{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50rpx;
+}
+
+.park-close{
+  width: 100%;
+  margin: 10rpx 0rpx 0rpx 0rpx;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.parks-list{
+  width: 100%;
+  padding: 10rpx,0;
+  display: flex;
+  flex-direction: column;
+  /* position: absolute; */
+}
+.park-bar{
+  width: 100%;
+  flex-flow: row;
+  padding: 3rpx 0;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.park-icon{
+  width: 80rpx;
+  height: 80rpx;
+  position: relative;
+  align-content: center;
+  /* top: 5rpx; */
+  left: 0rpx;
+  border-radius: 50%;
+}
+.park-name{
+  text-align: center;
+  font-size:medium;
+  font-style: normal;
+  font-weight:900;
+  font-family:'SimSun';
+}
+.park-dest{
+width: 100rpx;
+position: relative; 
+left: 0rpx; 
+top: 5rpx;
+white-space:pre-wrap;
+text-align: center;
+font-size:x-small;
+font-style: normal;
+font-weight:700;
+font-family:'SimSun';
+}
+.park-go{
+  width: 80rpx;
+  height: 80rpx;
+  position:relative;
+  right: 0rpx;
+  border-radius: 50%;
+}
+
+.park-info{
+  width: 100%;margin: 10rpx 0rpx 0rpx 0rpx;background-color:white;
+}
+.info-list{
+  width: 100%;
+  padding: 1rpx,0;
+  display: flex;
+  flex-direction: column;
+}
+.info-bar{
+  width: 100%;
+  /* padding: 3rpx 0; */
+  position: relative;
+  /* top: 5rpx; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: row;
+  /* border: 1rpx solid black;
+  border-radius: 15rpc; */
+  /* border-bottom: 1rpx solid #4169E1; */
+}
+.info-title{
+  width:100rpx ;
+  position: relative;
+  left: 15rpx;
+  text-align: center;
+  font-size:large;
+  font-style: normal;
+  font-weight:900;
+  font-family:'SimSun';
+}
+.info-min-content{
+  width: 500rpx;
+  text-align: center;
+  font-size:medium;
+  font-style: normal;
+  font-weight:700;
+  font-family:'SimSun';
+}
+
+
+
+/*弹窗*/
+.park-info-detial{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-detial-top{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  position: relative;
+  top: 15rpx;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.info-detial-name{
+  position: relative;
+  left: 10rpx;
+  width: 600rpx;
+  text-align: center;
+  align-items: center;
+  font-size:large;
+  font-style: normal;
+  font-weight:900;
+  font-family:'SimSun';
+  white-space: pre-line;
+}
+
+
+.park-icon-go-img{
+  width: 80rpx;
+  height: 80rpx;
+  position:relative;
+  right: 0rpx;
+  margin-left: 15rpx;
+  border-radius: 50rpx;
+}
+
+.park-info-detials{
+  width: 100%;
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+}
+.introduce_no{ 
+  text-align: center;
+  color: 	#808080;
+}
+
+/* .park-introduce{
+  width: 500rpx;
+} */
+
+
+.line {
+  border: 1px solid #ccc;
+  opacity: 0.2;
+}

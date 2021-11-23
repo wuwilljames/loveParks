@@ -1,0 +1,103 @@
+<wxs module="numberUtil" src="../../utils/util.wxs"></wxs>
+<!-- <view class="bar">
+<image class="logo" src="../../images/logo.png"></image>
+<text>爱心驿站</text>
+</view> -->
+<view class="page">
+<!-- 搜索框 -->
+  <view>
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+            <!-- 搜索框 -->
+               <navigator url="{{url}}" bindtap="getUrl" >
+                  <view class="weui-search-bar__box">
+                    <view class="search-icon">
+                        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    </view>
+                    <input type="text" class="weui-search-bar__input" disabled="true" placeholder="请输入驿站名称" />
+                  </view>
+              </navigator>
+            </view>
+            <!-- 搜索按钮,调用搜索查询方法 -->
+            <view class="weui-search-bar__cancel-btn" >搜索</view>
+        </view>
+  </view>
+
+<view class="container">
+<!-- 地图 -->
+  <map 
+  id="map" 
+  class="map"
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}" 
+  scale="{{scale}}"  
+  markers="{{markers}}" 
+  bindmarkertap="popup"
+  show-location   
+  enable-poi 
+  style="height: {{0.32*Height}}px;"
+  >
+      <view class='map-location'>
+          <image class="map-icon"  bindtap="back2location" src="../../images/location.jpg" ></image>
+      </view>
+  </map>
+
+<!-- 推荐 -->
+<view class="park-close" style="height: {{0.25*Height}}px;">
+  <view wx:if="{{parks.length>0}}">
+    <block  class="park-list" wx:for="{{parks}}"  wx:for-item="item" wx:key="index">
+      <view class="park-bar" style="height: {{0.3*0.25*Height}}px;">
+        <image class="park-icon" src="../../images/yizhan.png"></image>
+        <view class="park-name"  style="position: relative;top: 5rpx;left:0rpx;width: 440rpx;">{{item.name}}</view>
+        <view class="park-dest" >距离{{numberUtil.numberFormat(item.distance)}}km</view>
+        <image class="park-go" src="../../images/go.png" bindtap="move2Location" 
+        data-park="{{item}}"></image>
+      </view>
+      <view class="line"></view>
+    </block>
+  </view>
+  <block wx:else class="park-exprose"> 
+  <button  type="primary" size="default" bindtap="nearParks">获取附近驿站</button>
+  </block>
+</view>
+
+<!-- 公告 -->
+<view class="park-info" style="height: {{0.3*Height}}px;">
+    <scroll-view style="height: {{0.3*Height}}px;" scroll-y="true">
+      <view class="info-list" wx:for="{{infos}}" wx:for-item="item" wx:key="index">
+        <navigation class="info-bar" style="height: {{0.3*0.25*Height}}px;">
+        <view class="info-title">{{item.title}}</view>
+        <text decode="true">&nbsp;&nbsp;&nbsp;|&nbsp;</text>
+        <view class="info-min-content" >{{item.content}}</view>
+        </navigation>
+        <view class="line"></view>
+      </view>
+    </scroll-view>
+</view>
+</view>
+
+<!-- 弹窗 -->
+<page-container 
+  show="{{show}}"
+  round="true"
+  overlay="true"
+  duration="300"
+  position="bottom"
+  custom-style="height: 40%;"
+>
+<view class="park-info-detial">
+  <view class="info-detial-top">
+    <view class="info-detial-name">{{marker.name}}</view>
+    <image class="park-icon-go-img" src="../../images/go.png"  bindtap="move2Location" data-park="{{marker}}"/>
+  </view>
+  <view class="park-info-detials">
+  <scroll-view wx:if="{{introduce_text.length>0}}" scroll-y="true" class="info-detial-scroll" style="height: {{0.75*0.4*Height}}px;">
+    <text decode="true" class="park-introduce">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{introduce_text}}
+    </text>
+  </scroll-view>
+  <view wx:else class="introduce_no">暂无介绍</view>
+  </view>
+</view>
+</page-container>
+</view>

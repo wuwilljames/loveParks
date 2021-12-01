@@ -19,7 +19,7 @@ const formatNumber = n => {
 var QQMapWX = require('./qqmap-wx-jssdk.min.js');
       // 实例化API核心类
 const qqmapsdk = new QQMapWX({
-          key: 'PFYBZ-X273F-B4NJ6-N47JH-OZYOS-7PBA5' // 必填
+          key: '' // 必填
       });
 
 function goto_login(){
